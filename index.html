@@ -5,107 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ノボリコタン 〜自然と共につくる村〜</title>
     <style>
-        /* 背景画像の設定 */
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-image: url('bg-ac.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            background-size: cover; background-position: center; background-attachment: fixed;
             font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Meiryo", sans-serif;
             color: #5c4b3c;
         }
-
-        /* 画面全体を覆うコンテナ */
-        .wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* あつ森風の掲示板・看板スタイル */
+        .wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
         .board {
-            background-color: rgba(253, 250, 240, 0.92);
-            border: 8px solid #f1e9d2;
-            border-radius: 50px;
-            padding: 40px;
-            margin-bottom: 40px;
+            background-color: rgba(253, 250, 240, 0.95);
+            border: 8px solid #f1e9d2; border-radius: 50px;
+            padding: 30px; margin-bottom: 40px; text-align: center;
             box-shadow: 0 10px 0 rgba(0,0,0,0.05);
-            text-align: center;
         }
-
         h1 { font-size: 2.5rem; color: #5ead45; margin-bottom: 10px; }
-        h2 { border-bottom: 3px dashed #5ead45; display: inline-block; padding-bottom: 5px; margin-bottom: 25px; }
+        h2 { border-bottom: 3px dashed #5ead45; display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
 
-        /* 動画の枠 */
-        .video-frame {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 25px;
-            overflow: hidden;
-            border: 6px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .video-frame iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
-
-        /* ボタン（あつ森のUI風） */
-        .btn {
-            display: inline-block;
-            background: #5ead45;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 5px 0 #4a8a36;
-            margin: 10px;
-            transition: 0.2s;
-        }
-        .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a8a36; }
-
-        /* Notion風のリストを整理 */
+        /* 章ごとのリンクエリア */
         .link-list {
             text-align: left;
             background: #fff;
-            padding: 20px;
-            border-radius: 20px;
+            padding: 25px;
+            border-radius: 30px;
+            margin: 20px 0;
+            border: 2px solid #f1e9d2;
+        }
+        .link-list a {
+            color: #5ead45;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+        .link-list a:hover { transform: translateX(5px); opacity: 0.8; }
+        .link-list a::before { content: "🍃 "; }
+
+        /* 📸 写真ギャラリー */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
             margin-top: 20px;
         }
-        .link-list a { color: #5ead45; text-decoration: none; font-weight: bold; display: block; margin: 10px 0; }
+        .photo-card {
+            background: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .photo-card img {
+            width: 100%; height: 180px;
+            object-fit: cover; border-radius: 15px;
+        }
+        .photo-title { margin-top: 10px; font-weight: bold; font-size: 0.9rem; }
+
+        /* 動画 */
+        .video-frame {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            border-radius: 25px; overflow: hidden; border: 6px solid #fff;
+        }
+        .video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* ボタン */
+        .btn {
+            display: inline-block; background: #5ead45; color: #fff;
+            padding: 15px 30px; border-radius: 50px; text-decoration: none;
+            font-weight: bold; box-shadow: 0 5px 0 #4a8a36; margin: 10px;
+        }
+        .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a8a36; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
     <div class="board">
-        <h1>ノボリコタン 第2章</h1>
+        <h1>ノボリコタン 第3章</h1>
         <p>〜 自然と共に、村を作る記録 〜</p>
         
         <div class="link-list">
-            <a href="#">🍃 ノボリコタン 0章はこちらから</a>
-            <a href="#">🍃 ノボリコタン 1章はこちらから</a>
+            <a href="https://cerulean-golf-39c.notion.site/0-c43758bf063e4d2891573e258511f530?pvs=73" target="_blank">ノボリコタン 0章はこちらから（記録は最初のみ）</a>
+            <a href="https://cerulean-golf-39c.notion.site/1-e67e1c34d5ea4087bac14e895b10e9e4?pvs=73" target="_blank">ノボリコタン 1章はこちらから</a>
+            <a href="https://cerulean-golf-39c.notion.site/2-1b3718f5cc3d80818af3c09a8b5db36d" target="_blank">ノボリコタン 2章はこちらから</a>
         </div>
     </div>
 
     <div class="board">
-        <h2>🎥 第2章ダイジェスト</h2>
+        <h2>📒 開村のきろく</h2>
+        <div class="gallery-grid">
+            <div class="photo-card">
+                <img src="photo1.jpg" alt="活動写真1">
+                <div class="photo-title">第10回：現地ワーク</div>
+            </div>
+            <div class="photo-card">
+                <img src="photo2.jpg" alt="活動写真2">
+                <div class="photo-title">五右衛門風呂づくり</div>
+            </div>
+            <div class="photo-card">
+                <img src="photo3.jpg" alt="活動写真3">
+                <div class="photo-title">協生農法の種まき</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="board">
+        <h2>🎥 最新ダイジェスト</h2>
         <div class="video-frame">
             <iframe src="https://www.youtube.com/embed/nvt2u6SIMCI" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p style="margin-top:20px;">活動の様子を動画でチェックしてね！</p>
-        <a href="https://youtu.be/Vxak_8KU10c" class="btn">第1章をおさらいする</a>
-    </div>
-
-    <div class="board">
-        <h2>🏡 むらの場所</h2>
-        <p>北海道余市町に広がる、私たちの開拓地です。</p>
-        <a href="https://www.google.co.jp/maps/place/ノボリコタン/" class="btn" style="background:#e67e22; box-shadow:0 5px 0 #c36a1c;">Googleマップで見る</a>
+        <div style="margin-top: 25px;">
+            <a href="https://www.google.co.jp/maps/place/ノボリコタン/" class="btn" style="background:#e67e22; box-shadow:0 5px 0 #c36a1c;">Googleマップで見る</a>
+        </div>
     </div>
 </div>
 
