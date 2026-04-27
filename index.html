@@ -24,13 +24,21 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.03);
         }
 
+        /* 🎨 タイトル：改行前提でスマホでも見やすく */
         h1 { 
-            font-size: 2.5rem; 
+            font-size: 2.2rem; /* 少しだけ小さくしてスマホ対応 */
             color: #333333; 
             margin-bottom: 10px; 
+            line-height: 1.2;
             text-shadow: 2px 2px 4px rgba(255,255,255,0.9); 
         }
-        .board > p { color: #4a3f2d; }
+        h1 span {
+            font-size: 1.8rem; /* 「第3章」だけ少し小さくしてバランス調整 */
+            display: block;   /* 強制的に改行 */
+            margin-top: 5px;
+        }
+
+        .board > p { color: #4a3f2d; font-weight: bold; }
         h2 { border-bottom: 3px dashed #5ead45; display: inline-block; padding-bottom: 5px; margin-bottom: 25px; }
 
         .btn-group { margin: 20px 0; }
@@ -77,7 +85,7 @@
 
 <div class="wrapper">
     <div class="board">
-        <h1>ノボリコタン 第3章</h1>
+        <h1>ノボリコタン <span>第3章</span></h1>
         <p>〜 自然と共に、村を作る記録 〜</p>
 
         <div class="btn-group">
@@ -123,7 +131,7 @@
     <div class="board">
         <h2>🏡 むらの場所</h2>
         <div class="map-frame">
-            <iframe src="https://maps.google.com/?cid=1292155169230245004&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl1" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://maps.google.com/?cid=1292155169230245004&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl2" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <p style="margin-top:15px;">北海道余市郡余市町登町</p>
     </div>
