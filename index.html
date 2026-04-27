@@ -13,48 +13,61 @@
             color: #5c4b3c;
         }
         .wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* 🎨 四角い背景の透明度を調整 */
         .board {
-            background-color: rgba(253, 250, 240, 0.95);
-            border: 8px solid #f1e9d2; border-radius: 50px;
+            /* rgbaの最後の「0.75」が透明度です（0に近づくほど透明になります） */
+            background-color: rgba(253, 250, 240, 0.75); 
+            /* 背景を少しぼかして、すりガラス風にする（高級感が出ます） */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            
+            border: 8px solid rgba(241, 233, 210, 0.8); 
+            border-radius: 50px;
             padding: 30px; margin-bottom: 40px; text-align: center;
-            box-shadow: 0 10px 0 rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        h1 { font-size: 2.5rem; color: #5ead45; margin-bottom: 10px; }
+
+        h1 { font-size: 2.5rem; color: #5ead45; margin-bottom: 10px; text-shadow: 1px 1px 0 #fff; }
         h2 { border-bottom: 3px dashed #5ead45; display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
 
         .btn-group { margin: 20px 0; }
         .btn {
             display: inline-block; color: #fff; padding: 12px 25px; border-radius: 50px;
             text-decoration: none; font-weight: bold; margin: 8px; transition: 0.2s;
+            box-shadow: 0 5px 0 rgba(0,0,0,0.2);
         }
-        .btn-green { background: #5ead45; box-shadow: 0 5px 0 #4a8a36; }
-        .btn-orange { background: #e67e22; box-shadow: 0 5px 0 #c36a1c; }
-        .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a8a36; }
+        .btn-green { background: #5ead45; }
+        .btn-orange { background: #e67e22; }
+        .btn:active { transform: translateY(3px); box-shadow: none; }
 
         .link-list {
-            text-align: left; background: #fff; padding: 20px; border-radius: 30px;
-            margin: 20px 0; border: 2px solid #f1e9d2;
+            text-align: left; background: rgba(255, 255, 255, 0.6); 
+            padding: 20px; border-radius: 30px; margin: 20px 0; border: 2px solid #f1e9d2;
         }
         .link-list a { color: #5ead45; text-decoration: none; font-weight: bold; display: block; margin: 12px 0; }
         .link-list a::before { content: "🍃 "; }
 
-        /* 動画と地図の共通枠 */
-        .embed-frame {
-            position: relative; padding-bottom: 56.25%; height: 0;
-            border-radius: 25px; overflow: hidden; border: 6px solid #fff;
-            margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .vision-img {
+            width: 100%; max-width: 800px; border-radius: 20px;
+            border: 8px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .embed-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         .gallery-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px; margin-top: 20px;
         }
         .photo-card {
-            background: #fff; padding: 10px; border-radius: 20px;
+            background: rgba(255, 255, 255, 0.8); padding: 10px; border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .photo-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; }
+
+        .map-frame {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            border-radius: 25px; overflow: hidden; border: 6px solid #fff;
+        }
+        .map-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     </style>
 </head>
 <body>
@@ -65,14 +78,21 @@
         <p>〜 自然と共に、村を作る記録 〜</p>
 
         <div class="btn-group">
-            <a href="https://youtu.be/Vxak_8KU10c" target="_blank" class="btn btn-green">🍃 第1章 おさらい</a>
-            <a href="#digest" class="btn btn-orange">🎬 第2章 おさらい (動画)</a>
+            <a href="https://youtu.be/Vxak_8KU10c" target="_blank" class="btn btn-green">🍃 第1章 おさらい動画</a>
+            <a href="https://youtu.be/Vxak_8KU10c" target="_blank" class="btn btn-orange">🎬 第2章 おさらい動画</a>
         </div>
         
         <div class="link-list">
             <a href="https://cerulean-golf-39c.notion.site/0-c43758bf063e4d2891573e258511f530?pvs=73" target="_blank">ノボリコタン 0章はこちらから</a>
             <a href="https://cerulean-golf-39c.notion.site/1-e67e1c34d5ea4087bac14e895b10e9e4?pvs=73" target="_blank">ノボリコタン 1章はこちらから</a>
             <a href="https://cerulean-golf-39c.notion.site/2-1b3718f5cc3d80818af3c09a8b5db36d" target="_blank">ノボリコタン 2章はこちらから</a>
+        </div>
+    </div>
+
+    <div class="board">
+        <h2>🗺️ ノボリコタン第1章の構想図</h2>
+        <div style="margin-top: 20px;">
+            <img src="vision-map.jpg" alt="構想図" class="vision-img">
         </div>
     </div>
 
@@ -85,21 +105,11 @@
         </div>
     </div>
 
-    <div class="board" id="digest">
-        <h2>🎥 第2章ダイジェスト</h2>
-        <div class="embed-frame">
-            <iframe src="https://www.youtube.com/embed/nvt2u6SIMCI" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p>（2025年3月～8月の活動記録）</p>
-    </div>
-
     <div class="board">
         <h2>🏡 むらの場所</h2>
-        <div class="embed-frame">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.4410141679054!2d140.80630327660232!3d43.15256027112999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0a097088015941%3A0x11ee2847c0a74c8c!2z44OO44Oc44Oq44Kz44K_44Oz!5e0!3m2!1sja!2sjp!4v1714227000000!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.6231013444033!2d140.757014476634!3d43.09146197113426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0aed7081015941%3A0x11ee2847c0a74c8c!2z44OO44Oc44Oq44Kz44K_44Oz!5e0!3m2!1sja!2sjp!4v1711342600000!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <p>北海道余市郡余市町登町</p>
-        <a href="https://maps.google.com/?cid=1292155169230245004&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" target="_blank" class="btn btn-orange">大きな地図で見る</a>
     </div>
 </div>
 
