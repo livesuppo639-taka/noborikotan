@@ -3,43 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ノボリコタン 公式ホームページ</title>
+    <title>ノボリコタン 〜自然と共につくる村〜</title>
     <style>
-        :root { --primary-color: #2d5a27; --accent-color: #e67e22; --bg-color: #fdfaf5; --text-color: #333; }
-        body { font-family: sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; }
-        header { background-color: var(--primary-color); color: white; padding: 2rem 1rem; text-align: center; }
-        nav { background: #fff; padding: 10px; text-align: center; position: sticky; top: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--primary-color); font-weight: bold; }
-        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        h2 { border-left: 5px solid var(--primary-color); padding-left: 10px; color: var(--primary-color); }
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
-    </style>
-</head>
-<body>
-<header>
-    <h1>ノボリコタン</h1>
-    <p>協生農法・アースバッグ・自然とつながる学びの場</p>
-</header>
-<nav>
-    <a href="#about">動画</a> <a href="#history">活動</a> <a href="#access">場所</a>
-</nav>
-<div class="container">
-    <section id="about">
-        <h2>最新の活動ダイジェスト</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/nvt2u6SIMCI" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-    <section id="history">
-        <h2>活動スケジュール</h2>
-        <ul>
-            <li>現地ワーク進行中！</li>
-            <li>詳細はオープンチャットにて配信。</li>
-        </ul>
-    </section>
-</div>
-<footer><p>© 2026 ノボリコタン</p></footer>
-</body>
-</html>
+        /* あつ森風のカラーパレット */
+        :root {
+            --sky-blue: #8cd4e6;
+            --grass-green: #78bc61;
+            --leaf-green: #5ead45;
+            --wood-brown: #e8d0a9;
+            --paper-white: #fdfaf0;
+            --text-main: #5c4b3c;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--grass-green);
+            background-image: radial-gradient(#95d67a 20%, transparent 20%);
+            background-size: 40px 40px; /* 地面の芝目風パターン */
+            font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Meiryo", sans-serif;
+            color: var(--text-main);
+        }
+
+        /* ヘッダー：空と看板 */
+        header {
+            background-color: var(--sky-blue);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 8px solid #fff;
+        }
+
+        .signboard {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 50px; /* 丸み */
+            display: inline-block;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.1);
+            border: 4px solid var(--wood-brown);
+        }
+
+        h1 { margin: 0; font-size: 2rem; color: var(--leaf-green); }
+        h1::before { content: "🍃 "; }
+
+        /* ナビゲーション */
+        nav {
+            background: var(--wood-brown);
+            padding: 10px;
+            text-align: center;
+            border-bottom: 4px solid #c4a47a;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: bold;
+            background: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { background: var(--leaf-green); color: #fff; }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        /* セクション：手紙や掲示板のような白背景 */
+        section {
+            background: var(--paper-white);
+            padding: 30px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            border: 6px solid #f1e9d2;
+            box-shadow: 0 10px 0 rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 3px dashed var(--leaf-green);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
